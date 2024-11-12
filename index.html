@@ -40,23 +40,27 @@
         .image-slider-left-to-right {
             position: absolute;
             display: flex;
+            left: -100%; /* Mulai dari luar kiri */
             animation: slide-left-to-right 10s linear infinite;
         }
-
+    
         .slide-image-left-to-right {
             width: 150px;
             margin-right: 30px;
         }
 
+        /* Left to Right Animation */
         @keyframes slide-left-to-right {
             0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            50% { transform: translateX(0); } /* Di tengah frame */
+            100% { transform: translateX(150%); } /* Keluar dari sisi kanan frame lebih jauh */
         }
 
         /* Image Slider - Right to Left */
         .image-slider-right-to-left {
             position: absolute;
             display: flex;
+            right: -100%; /* Mulai dari luar kanan */
             animation: slide-right-to-left 10s linear infinite;
         }
 
@@ -65,9 +69,11 @@
             margin-left: 30px;
         }
 
-        @keyframes slide-right-to-left {
+        /* Right to Left Animation */
+           @keyframes slide-right-to-left {
             0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+            50% { transform: translateX(0); } /* Di tengah frame */
+            100% { transform: translateX(-150%); } /* Keluar dari sisi kiri frame lebih jauh */
         }
 
         /* Header Styling */
